@@ -206,6 +206,10 @@ export default abstract class GPT3Tokenizer {
       texts = texts.concat(
         newTokens.map((x) => this.decode([x])),
       );
+      // if bpeTokens.length more than 10000, then break
+      if (bpeTokens.length > 9999) {
+        break;
+      }
     }
 
     return {
