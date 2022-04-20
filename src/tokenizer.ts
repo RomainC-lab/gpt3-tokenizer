@@ -130,9 +130,6 @@ export default abstract class GPT3Tokenizer {
   }
 
   bpe(token: string) {
-    if (token in this.cache) {
-      return this.cache[token];
-    }
 
     let word: string[] | string = token.split('');
 
